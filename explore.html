@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Explore - ModaMate</title>
+    <!-- Title -->
+    <meta property="og:title" content="Explore - ModaMate" />
+      
+    <!-- Description -->
+    <meta property="og:description" content="AI-Powered Clothing Search Engine" />
+
+    <!-- Image -->
+    <meta property="og:image" content="https://res.cloudinary.com/ddyftb9yl/image/upload/fl_preserve_transparency/v1743707831/LightTheme_xgcwi8.jpg?_s=public-apps" />
+
+    <!-- Favicon for light theme -->
+    <link rel="icon" type="image/png" href="assets/img/LightTheme.ico" media="(prefers-color-scheme: light)">
+    
+    <!-- Favicon for dark theme -->
+    <link rel="icon" type="image/png" href="assets/img/DarkTheme.ico" media="(prefers-color-scheme: dark)">
+
+    <link rel="stylesheet" href="./assets/css/style-prefix.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+    <div class="header-main">
+        <div class="container" style="height: 4em; display: flex;">
+          <a href="index.html" class="header-logo">
+            <h1 style="color: rgb(32, 31, 31);">Explore</h1>
+          </a>
+  
+          <div class="header-search-container">
+            <input id="searchbar" style="border-color: gray;" type="search" name="search" class="search-field" placeholder="Search" />
+      
+            <button class="search-btn" style="color: black;">
+              <ion-icon name="search-outline"></ion-icon>
+            </button>
+          </div>
+  
+          </div>
+        </div>
+      </div>
+
+    <div style="margin: auto;">
+    <div class="product-main">
+    <div id="results-div" class="product-grid" style="padding-left: 7em; padding-right: 7em; padding-top: 1em;">
+        
+    </div>
+    </div>
+    </div>
+    <script type="module">
+        import { explore } from './backend/explore.js';
+        let searchbar = document.getElementById('searchbar')
+        searchbar.addEventListener('keypress', function(event) {
+            if (event.key === 'Enter') {
+                // Prevent the form from submitting and refreshing the page
+                event.preventDefault(); 
+    
+                let query = searchbar.value.trim();
+                if (query) {
+                    window.open(`results.html?query=${encodeURIComponent(query)}`)
+                }
+            }
+        });
+        function activateTheme() {
+            const darkModeButton = document.querySelector('button[data-bs-theme-value="dark"]');
+            if (darkModeButton) {
+                darkModeButton.classList.add('active');
+            }
+        }
+    
+        window.onload = function() {
+            activateTheme();
+            explore();
+        }
+        </script>
+</body>
+</html>
