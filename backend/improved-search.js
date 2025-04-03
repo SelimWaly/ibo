@@ -55,6 +55,7 @@ class Clothing {
     constructor() {
         this.categories = [
             { name: "Shirt", base: "Shirt" },
+            { name: "Shirts", base: "Shirt" },
             { name: "T-Shirt", base: "Shirt" },
             { name: "T-Shirts", base: "Shirt" },
             { name: "TShirt", base: "Shirt" },
@@ -69,6 +70,7 @@ class Clothing {
             { name: "Shorts", base: "Pants" },
             { name: "Short", base: "Pants" },
             { name: "Jacket", base: "Jacket" },
+            { name: "Jackets", base: "Jacket" },
             { name: "Blazer", base: "Jacket" },
             { name: "Blazers", base: "Jacket" },
             { name: "Suit", base: "Suit" },
