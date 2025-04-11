@@ -98,7 +98,7 @@
         <div class="header-search-container">
           <input id="searchbar" type="search" name="search" class="search-field" placeholder="Search" />
 
-          <button class="search-btn">
+          <button class="search-btn" id="searchbtn">
             <ion-icon name="search-outline"></ion-icon>
           </button>
         </div>
@@ -1431,6 +1431,13 @@
         }
     });
     
+    let searchbtn = document.getElementById('searchbtn')
+    searchbtn.onclick = function() {
+        let query = searchbar.value.trim();
+        if (query) {
+          window.location.href = `results.html?query=${encodeURIComponent(query)}`;
+        }
+    }
   </script>
   <script type="module">
     import { showLatest } from './backend/latest.js';
