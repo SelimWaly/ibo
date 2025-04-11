@@ -118,7 +118,16 @@ class Specifics {
         this.specifics = [
             { name: "Puffer", base: "Puffer" },
             { name: "Zipper", base: "Zipper" },
+            { name: "Zipped", base: "Zipper" },
+            { name: "Zip", base: "Zipper" },
             { name: "Cropped", base: "Crop"},
+            { name: "Baggy", base: "Oversized"},
+            { name: "Bagged", base: "Oversized"},
+            { name: "Bagging", base: "Oversized"},
+            { name: "Oversized", base: "Oversized"},
+            { name: "Oversize", base: "Oversized"},
+            // { name: "Embirodery", base: "Embirodery"},
+            // { name: "Embiroded", base: "Embirodery"},
             { name: "Crop", base: "Crop"},
             { name: "Croptop", base: "Crop"},
             { name: "Crop-top", base: "Crop"},
@@ -254,9 +263,10 @@ function search(query, data) {
     let filteredDb = data.filter(item =>
         (!brand || toLowerCaseManual(item.brand) === toLowerCaseManual(brand)) &&
         (!category || toLowerCaseManual(item.type) === toLowerCaseManual(category)) &&
-        (!color || toLowerCaseManual(item.color) === toLowerCaseManual(color))
-        // && (!specific || item.keywords.includes(specific.toLowerCase())) &&
-        // (!texture || item.keywords.includes(texture.toLowerCase()))
+        (!color || toLowerCaseManual(item.color) === toLowerCaseManual(color)) &&
+        (!specific || toLowerCaseManual(item.specific) === toLowerCaseManual(specific))
+        // (!specific || item.keywords.includes(specific.toLowerCase()))
+        // && (!texture || item.keywords.includes(texture.toLowerCase()))
     );
 
     let searchedDb = filteredDb.filter(item2 =>
