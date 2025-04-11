@@ -35,7 +35,7 @@
           <div class="header-search-container">
             <input id="searchbar" style="border-color: gray;" type="search" name="search" class="search-field" placeholder="Search" />
   
-            <button class="search-btn" style="color: black;">
+            <button class="search-btn" id="searchbtn" style="color: black;">
               <ion-icon name="search-outline"></ion-icon>
             </button>
           </div>
@@ -74,6 +74,13 @@
                 darkModeButton.classList.add('active');
             }
         }
+        
+        let searchbtn = document.getElementById('searchbtn')
+        searchbtn.onclick = function() {
+            if (searchbar.value.trim()) {
+              window.location.href = `results.html?query=${encodeURIComponent(searchbar.value.trim())}`;
+            }
+        }
     
         window.onload = function() {
             let parameters = new URLSearchParams(window.location.search);
@@ -84,5 +91,7 @@
             results(query);
         }
         </script>
+        <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+        <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 </body>
 </html>
