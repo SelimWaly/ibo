@@ -36,7 +36,7 @@ class Brands {
     constructor() {
         this.brands = [
             { name: "Asili", base: "Asili" },
-            { name: "Strike", base: "Strike" },
+            // { name: "Strike", base: "Strike" },
             { name: "CAC Drip", base: "CAC Drip" },
             { name: "CAC", base: "CAC Drip" },
             { name: "Needle It", base: "Needle" },
