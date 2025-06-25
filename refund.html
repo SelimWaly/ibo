@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Return Policy</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f0f2f5;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+        }
+        /* Ensure the iframe fills its container responsively */
+        iframe {
+            width: 100%;
+            height: 80vh; /* Adjust height as needed */
+            border-radius: 0.75rem; /* rounded-lg */
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06); /* shadow-lg */
+        }
+    </style>
+</head>
+<body class="p-4">
+    <div class="container mx-auto max-w-4xl bg-white p-8 rounded-lg shadow-xl">
+        <h1 class="text-4xl font-extrabold text-gray-800 text-center mb-6">
+            <span class="text-indigo-600" style="color: black;">Refund Policy</span>
+        </h1>
+        <!-- <p class="text-lg text-gray-600 text-center mb-8">
+            This page loads a PDF file using your browser's built-in PDF viewer. You can replace the URL below with your own PDF.
+        </p> -->
+
+        <!-- PDF Viewer Iframe -->
+        <!-- The iframe loads the PDF. Most modern browsers have a built-in PDF viewer. -->
+        <!-- Replace 'https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf' with your actual PDF URL. -->
+        <iframe
+            src="policies/Refund Policy for ModaMate.pdf"
+            title="Embedded PDF Document"
+            class="rounded-lg shadow-lg"
+        >
+            <!-- Fallback content for browsers that do not support iframes or PDF embedding -->
+            <p class="text-center text-red-500 mt-4">
+                Your browser does not support embedded PDF files. You can download the PDF
+                <a href="policies/Refund Policy for ModaMate.pdf" class="text-indigo-600 hover:underline font-medium">here</a>.
+            </p>
+        </iframe>
+
+        <!-- <div class="mt-8 text-center text-gray-500 text-sm">
+            <p>&copy; 2025 PDF Viewer. All rights reserved.</p>
+            <p class="mt-2">For demonstration purposes. Remember to replace the placeholder PDF URL.</p>
+        </div> -->
+    </div>
+</body>
+</html>
